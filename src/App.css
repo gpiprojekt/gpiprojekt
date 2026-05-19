@@ -250,10 +250,7 @@ a { text-decoration: none; color: inherit; }
   background: #f5f2ee;
 }
 .card--light:hover { background: #fffaf7; }
-.card--light .card-num   { color: #999; }
-.card--light .card-name  { color: #111; }
-.card--light .card-tagline { color: #333; opacity: 1; }
-.card--light .card-desc  { color: #666; }
+.card--light .card-desc  { color: #555; }
 .card--light .card-foot  { border-color: rgba(0,0,0,0.12); }
 .card--light::after { border-color: var(--c); }
 
@@ -282,84 +279,32 @@ a { text-decoration: none; color: inherit; }
 }
 .card:hover::after { opacity: 1; }
 
-.card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  z-index: 1;
-}
-.card-num {
-  font-family: var(--display);
-  font-size: 12px;
-  font-weight: 300;
-  color: var(--fg-dim);
-  letter-spacing: .12em;
-}
-.card-tag {
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--c);
-  padding: 3px 9px;
-  border: 1px solid var(--c);
-  border-radius: 1px;
-  opacity: .75;
-}
-
 .card-logo {
   position: relative;
   z-index: 1;
-  margin: 20px 0 8px;
-  height: 80px;
+  flex: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 32px 0;
 }
 
 .card-logo-img {
-  max-height: 80px;
-  max-width: 100%;
+  max-height: 140px;
+  max-width: 80%;
   width: auto;
   object-fit: contain;
-  object-position: left center;
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1);
 }
 
-.card-logo-wordmark {
-  font-family: var(--display);
-  font-size: 42px;
-  font-weight: 600;
-  color: var(--white);
-  letter-spacing: -.02em;
-  line-height: 1;
-}
-
-.card-name {
-  font-family: var(--display);
-  font-size: clamp(38px, 4vw, 56px);
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1;
-  letter-spacing: -.025em;
-  margin-top: 6px;
-  position: relative;
-  z-index: 1;
-}
-
-.card-tagline {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--white);
-  opacity: .65;
-  position: relative;
-  z-index: 1;
+.card:hover .card-logo-img {
+  transform: scale(1.05);
 }
 
 .card-desc {
   font-size: 13px;
   line-height: 1.75;
   color: var(--fg-dim);
-  flex: 1;
   position: relative;
   z-index: 1;
 }

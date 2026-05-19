@@ -6,8 +6,7 @@ const projects = [
     name: 'John Dragon',
     domain: 'johndragon.pl',
     tagline: 'Dragon boat racing na Wiśle',
-    description:
-      'Flagowy projekt spółki — warszawski klub dragon boat i sportów wodnych. Pasja, rywalizacja i drużynowy duch na Wiśle.',
+    description: 'Warszawski klub dragon boat i sportów wodnych na Wiśle.',
     color: '#FF6B1A',
     colorDim: 'rgba(255,107,26,0.1)',
     category: 'Sport & Lifestyle',
@@ -19,8 +18,7 @@ const projects = [
     name: 'CHILLi Boats',
     domain: 'nolicense.pl',
     tagline: 'Wypożyczalnia łódek bez patentu',
-    description:
-      'Rzeka dostępna dla każdego. Wypożyczalnia łódek bez wymaganego patentu — relaks, przyroda i Warszawa z wody.',
+    description: 'Wypożyczalnia łódek bez patentu — Wisła dla każdego.',
     color: '#ef4444',
     colorDim: 'rgba(239,68,68,0.1)',
     category: 'Rekreacja wodna',
@@ -32,8 +30,7 @@ const projects = [
     name: 'Wisła Express',
     domain: 'wislaexpress.waw.pl',
     tagline: 'Taksówka wodna w Warszawie',
-    description:
-      'Nowoczesna taksówka wodna na Wiśle. Szybki, komfortowy i ekologiczny transport miejski z nurtem rzeki.',
+    description: 'Taksówka wodna na Wiśle — szybki transport między plażami i bulwarami Warszawy.',
     color: '#dc2626',
     colorDim: 'rgba(220,38,38,0.1)',
     category: 'Transport',
@@ -45,8 +42,7 @@ const projects = [
     name: 'BestShirt',
     domain: 'bestshirt.pl',
     tagline: 'Odzież firmowa z nadrukiem',
-    description:
-      'Produkcja i personalizacja odzieży reklamowej. Koszulki, bluzy, akcesoria — szybko, w najwyższej jakości.',
+    description: 'Produkcja odzieży firmowej z nadrukiem — koszulki, bluzy, akcesoria.',
     color: '#dc2626',
     colorDim: 'rgba(220,38,38,0.08)',
     category: 'Produkcja & Moda',
@@ -111,18 +107,9 @@ export default function App() {
               }
             >
               <div className="card-glow" />
-              <div className="card-top">
-                <span className="card-num">{p.id}</span>
-                <span className="card-tag">{p.category}</span>
-              </div>
               <div className="card-logo">
-                {p.logo
-                  ? <img src={p.logo} alt={`${p.name} logo`} className="card-logo-img" />
-                  : <span className="card-logo-wordmark">{p.name}</span>
-                }
+                <img src={p.logo} alt={p.name} className="card-logo-img" />
               </div>
-              <h2 className="card-name">{p.name}</h2>
-              <p className="card-tagline">{p.tagline}</p>
               <p className="card-desc">{p.description}</p>
               <div className="card-foot">
                 <span className="card-domain">{p.domain}</span>
