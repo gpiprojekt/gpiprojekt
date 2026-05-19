@@ -245,13 +245,25 @@ a { text-decoration: none; color: inherit; }
 .card:hover::before { opacity: 1; }
 .card:hover { background: #0e1420; }
 
-/* Light variant — BestShirt (white-dominant brand) */
+/* Light variant — BestShirt */
 .card--light {
   background: #f5f2ee;
 }
 .card--light:hover { background: #fffaf7; }
 .card--light .card-desc  { color: #555; }
 .card--light .card-foot  { border-color: rgba(0,0,0,0.12); }
+
+/* Colored variant — CHILLi & Wisła Express (red brand) */
+.card--colored {
+  background: var(--c);
+}
+.card--colored:hover { filter: brightness(1.08); }
+.card--colored::before { display: none; }
+.card--colored .card-logo-img { filter: brightness(0) invert(1); }
+.card--colored .card-desc { color: rgba(255,255,255,0.75); }
+.card--colored .card-foot { border-color: rgba(255,255,255,0.25); }
+.card--colored .card-domain { color: #fff; }
+.card--colored .card-arrow { color: #fff; }
 .card--light::after { border-color: var(--c); }
 
 .card-glow {

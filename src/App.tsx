@@ -12,6 +12,7 @@ const projects = [
     category: 'Sport & Lifestyle',
     logo: '/logos/johndragon-logo.png',
     light: false,
+    colored: false,
   },
   {
     id: '02',
@@ -24,6 +25,7 @@ const projects = [
     category: 'Rekreacja wodna',
     logo: '/logos/chilli-logo.svg',
     light: false,
+    colored: true,
   },
   {
     id: '03',
@@ -36,6 +38,7 @@ const projects = [
     category: 'Transport',
     logo: '/logos/wislaexpress-logo.svg',
     light: false,
+    colored: true,
   },
   {
     id: '04',
@@ -48,6 +51,7 @@ const projects = [
     category: 'Produkcja & Moda',
     logo: '/logos/bestshirt-logo.svg',
     light: true,
+    colored: false,
   },
 ]
 
@@ -97,7 +101,7 @@ export default function App() {
               href={`https://${p.domain}`}
               target="_blank"
               rel="noopener noreferrer"
-              className={`card${p.light ? ' card--light' : ''}`}
+              className={`card${p.light ? ' card--light' : ''}${p.colored ? ' card--colored' : ''}`}
               style={
                 {
                   '--c': p.color,
