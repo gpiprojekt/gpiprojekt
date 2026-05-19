@@ -59,10 +59,9 @@ export default function App() {
   return (
     <div className="app">
       <nav className="nav">
-        <div className="nav-logo">
-          <span className="logo-gpi">GPI</span>
-          <span className="logo-projekt">PROJEKT</span>
-        </div>
+        <a href="/" className="nav-logo">
+          <img src="/logos/gpiprojekt-logo.png" alt="GPI PROJEKT" className="nav-logo-img" />
+        </a>
         <div className="nav-links">
           <a href="tel:+48536899899">+48 536 899 899</a>
           <a href="mailto:kontakt@gpiprojekt.pl">kontakt@gpiprojekt.pl</a>
@@ -153,10 +152,9 @@ export default function App() {
 
       <footer className="footer">
         <div className="footer-inner">
-          <div className="nav-logo">
-            <span className="logo-gpi">GPI</span>
-            <span className="logo-projekt">PROJEKT P.S.A.</span>
-          </div>
+          <a href="/" className="footer-logo">
+            <img src="/logos/gpiprojekt-logo.png" alt="GPI PROJEKT" className="footer-logo-img" />
+          </a>
           <div className="footer-contacts">
             <a href="tel:+48536899899">+48 536 899 899</a>
             <a href="mailto:kontakt@gpiprojekt.pl">kontakt@gpiprojekt.pl</a>

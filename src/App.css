@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=DM+Sans:wght@300;400;500&display=swap');
 
 /* ── Tokens ── */
 :root {
@@ -10,8 +10,8 @@
   --border:    rgba(237,233,226,0.07);
   --border-hi: rgba(237,233,226,0.18);
 
-  --display: 'Cormorant', Georgia, serif;
-  --body:    'Manrope', sans-serif;
+  --display: 'Josefin Sans', sans-serif;
+  --body:    'DM Sans', sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,20 +42,18 @@ a { text-decoration: none; color: inherit; }
   border-bottom: 1px solid var(--border);
 }
 
-.nav-logo { display: flex; align-items: baseline; gap: 7px; }
-.logo-gpi {
-  font-family: var(--display);
-  font-size: 21px;
-  font-weight: 600;
-  letter-spacing: .1em;
-  color: var(--white);
+.nav-logo {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 4px;
+  padding: 5px 12px;
+  text-decoration: none;
 }
-.logo-projekt {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--fg-dim);
+.nav-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
 .nav-links { display: flex; gap: 36px; }
@@ -137,9 +135,9 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   font-family: var(--display);
   font-size: clamp(72px, 14vw, 176px);
-  font-weight: 300;
-  line-height: .88;
-  letter-spacing: -.02em;
+  font-weight: 100;
+  line-height: .9;
+  letter-spacing: .08em;
   margin-bottom: 36px;
 }
 .title-solid  { color: var(--white); }
@@ -362,12 +360,11 @@ a { text-decoration: none; color: inherit; }
 
 .about-statement {
   font-family: var(--display);
-  font-size: clamp(22px, 2.4vw, 32px);
-  font-weight: 300;
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 200;
   color: var(--white);
-  line-height: 1.45;
-  letter-spacing: -.01em;
-  font-style: italic;
+  line-height: 1.55;
+  letter-spacing: .05em;
 }
 
 .about-data { display: flex; flex-direction: column; }
@@ -404,6 +401,9 @@ a { text-decoration: none; color: inherit; }
   flex-wrap: wrap;
   gap: 20px;
 }
+.footer-logo { display: flex; align-items: center; text-decoration: none; }
+.footer-logo-img { height: 36px; width: auto; display: block; filter: brightness(0) invert(1); opacity: .7; }
+.footer-logo:hover .footer-logo-img { opacity: 1; }
 .footer-contacts { display: flex; gap: 32px; }
 .footer-contacts a {
   font-size: 13px;
