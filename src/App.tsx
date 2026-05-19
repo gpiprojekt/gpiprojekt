@@ -11,7 +11,7 @@ const projects = [
     color: '#FF6B1A',
     colorDim: 'rgba(255,107,26,0.1)',
     category: 'Sport & Lifestyle',
-    logo: '/logos/johndragon.png',
+    logo: '/logos/johndragon-logo.png',
     light: false,
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     color: '#ef4444',
     colorDim: 'rgba(239,68,68,0.1)',
     category: 'Rekreacja wodna',
-    logo: '/logos/chilli.png',
+    logo: '/logos/chilli-logo.svg',
     light: false,
   },
   {
@@ -37,7 +37,7 @@ const projects = [
     color: '#dc2626',
     colorDim: 'rgba(220,38,38,0.1)',
     category: 'Transport',
-    logo: null,
+    logo: '/logos/wislaexpress-logo.svg',
     light: false,
   },
   {
@@ -50,7 +50,7 @@ const projects = [
     color: '#dc2626',
     colorDim: 'rgba(220,38,38,0.08)',
     category: 'Produkcja & Moda',
-    logo: '/logos/bestshirt.png',
+    logo: '/logos/bestshirt-logo.svg',
     light: true,
   },
 ]

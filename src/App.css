@@ -323,20 +323,6 @@ a { text-decoration: none; color: inherit; }
   width: auto;
   object-fit: contain;
   object-position: left center;
-  filter: brightness(0) invert(1);
-  transition: filter .4s;
-}
-
-.card--light .card-logo-img {
-  filter: none;
-}
-
-.card:hover .card-logo-img {
-  filter: brightness(0) invert(1);
-}
-
-.card--light:hover .card-logo-img {
-  filter: none;
 }
 
 .card-logo-wordmark {
