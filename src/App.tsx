@@ -11,7 +11,7 @@ const projects = [
     color: '#FF6B1A',
     colorDim: 'rgba(255,107,26,0.1)',
     category: 'Sport & Lifestyle',
-    icon: '龍',
+    logo: '/logos/johndragon.png',
     light: false,
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     color: '#ef4444',
     colorDim: 'rgba(239,68,68,0.1)',
     category: 'Rekreacja wodna',
-    icon: '⛵',
+    logo: '/logos/chilli.png',
     light: false,
   },
   {
@@ -37,7 +37,7 @@ const projects = [
     color: '#dc2626',
     colorDim: 'rgba(220,38,38,0.1)',
     category: 'Transport',
-    icon: '🚤',
+    logo: null,
     light: false,
   },
   {
@@ -50,7 +50,7 @@ const projects = [
     color: '#dc2626',
     colorDim: 'rgba(220,38,38,0.08)',
     category: 'Produkcja & Moda',
-    icon: '✦',
+    logo: '/logos/bestshirt.png',
     light: true,
   },
 ]
@@ -115,7 +115,12 @@ export default function App() {
                 <span className="card-num">{p.id}</span>
                 <span className="card-tag">{p.category}</span>
               </div>
-              <div className="card-icon">{p.icon}</div>
+              <div className="card-logo">
+                {p.logo
+                  ? <img src={p.logo} alt={`${p.name} logo`} className="card-logo-img" />
+                  : <span className="card-logo-wordmark">{p.name}</span>
+                }
+              </div>
               <h2 className="card-name">{p.name}</h2>
               <p className="card-tagline">{p.tagline}</p>
               <p className="card-desc">{p.description}</p>

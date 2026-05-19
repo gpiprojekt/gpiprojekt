@@ -308,12 +308,44 @@ a { text-decoration: none; color: inherit; }
   opacity: .75;
 }
 
-.card-icon {
-  font-size: 44px;
-  line-height: 1;
-  margin-top: 12px;
+.card-logo {
   position: relative;
   z-index: 1;
+  margin: 20px 0 8px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.card-logo-img {
+  max-height: 80px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+  filter: brightness(0) invert(1);
+  transition: filter .4s;
+}
+
+.card--light .card-logo-img {
+  filter: none;
+}
+
+.card:hover .card-logo-img {
+  filter: brightness(0) invert(1);
+}
+
+.card--light:hover .card-logo-img {
+  filter: none;
+}
+
+.card-logo-wordmark {
+  font-family: var(--display);
+  font-size: 42px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: -.02em;
+  line-height: 1;
 }
 
 .card-name {
