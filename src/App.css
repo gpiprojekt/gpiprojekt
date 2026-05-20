@@ -161,11 +161,10 @@ img { display: block; max-width: 100%; }
 }
 
 .project-logo {
-  max-height: 100px;
-  max-width: min(340px, 80vw);
+  max-height: 200px;
+  max-width: min(480px, 85vw);
   width: auto;
   object-fit: contain;
-  filter: var(--logo-filter, none);
   animation: fade-up .7s cubic-bezier(.16,1,.3,1) both;
 }
 
@@ -179,7 +178,7 @@ img { display: block; max-width: 100%; }
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 0 32px 40px;
+  padding: 0 32px 44px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -352,10 +351,37 @@ img { display: block; max-width: 100%; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 600px) {
-  .project-top { padding: 20px 20px; }
-  .project-bottom { padding: 0 20px 32px; }
+  .intro-logo { height: 60px; }
+
+  .project-top { padding: 20px; }
+  .project-center { padding: 72px 0 24px; }
+  .project-logo {
+    max-height: 160px;
+    max-width: 82vw;
+  }
+
+  .project-bottom {
+    padding: 0 20px 36px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .heart-btn {
+    align-self: flex-end;
+    flex-direction: row;
+    gap: 8px;
+  }
+  .heart-icon { font-size: 30px; }
+  .heart-count { font-size: 14px; min-height: auto; }
+
   .project-num { display: none; }
   .project-desc { font-size: 13px; }
-  .nav-dots { right: 12px; }
-  .contact-content { padding: 0 24px; gap: 24px; }
+
+  .nav-dots { right: 10px; gap: 6px; }
+  .nav-dot { width: 5px; height: 5px; }
+
+  .contact-content { padding: 0 24px; gap: 20px; }
+  .contact-logo { height: 36px; }
+  .contact-link { font-size: 14px; }
+  .contact-row { padding: 10px 0; }
 }
