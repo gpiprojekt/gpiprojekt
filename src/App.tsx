@@ -1,57 +1,43 @@
 import './App.css'
 
+const BASE = import.meta.env.BASE_URL
+
 const projects = [
   {
     id: '01',
     name: 'John Dragon',
     domain: 'johndragon.pl',
     tagline: 'Dragon boat racing na Wiśle',
-    description: 'Warszawski klub dragon boat i sportów wodnych na Wiśle.',
-    color: '#FF6B1A',
-    colorDim: 'rgba(255,107,26,0.1)',
-    category: 'Sport & Lifestyle',
-    logo: '/logos/johndragon-logo.png',
-    light: false,
-    colored: false,
+    description: 'Warszawski klub dragon boat i sportów wodnych. Treningi, regaty, eventy na Wiśle.',
+    color: '#E85C1A',
+    logo: `${BASE}logos/johndragon-logo.png`,
   },
   {
     id: '02',
     name: 'CHILLi Boats',
     domain: 'nolicense.pl',
     tagline: 'Wypożyczalnia łódek bez patentu',
-    description: 'Wypożyczalnia łódek bez patentu — Wisła dla każdego.',
-    color: '#ef4444',
-    colorDim: 'rgba(239,68,68,0.1)',
-    category: 'Rekreacja wodna',
-    logo: '/logos/chilli-logo.svg',
-    light: false,
-    colored: true,
+    description: 'Wynajem łódek elektrycznych i motorowych — bez patentu, dla każdego.',
+    color: '#1A6EBA',
+    logo: `${BASE}logos/chilli-logo.svg`,
   },
   {
     id: '03',
     name: 'Wisła Express',
     domain: 'wislaexpress.waw.pl',
     tagline: 'Taksówka wodna w Warszawie',
-    description: 'Taksówka wodna na Wiśle — szybki transport między plażami i bulwarami Warszawy.',
-    color: '#dc2626',
-    colorDim: 'rgba(220,38,38,0.1)',
-    category: 'Transport',
-    logo: '/logos/wislaexpress-logo.svg',
-    light: false,
-    colored: true,
+    description: 'Szybki transport wodny między bulwarami i plażami Warszawy.',
+    color: '#C49A14',
+    logo: `${BASE}logos/wislaexpress-logo.svg`,
   },
   {
     id: '04',
     name: 'BestShirt',
     domain: 'bestshirt.pl',
     tagline: 'Odzież firmowa z nadrukiem',
-    description: 'Produkcja odzieży firmowej z nadrukiem — koszulki, bluzy, akcesoria.',
-    color: '#dc2626',
-    colorDim: 'rgba(220,38,38,0.08)',
-    category: 'Produkcja & Moda',
-    logo: '/logos/bestshirt-logo.svg',
-    light: true,
-    colored: false,
+    description: 'Produkcja koszulek i bluz z nadrukiem DTF. Małe i duże serie, szybka realizacja.',
+    color: '#C0390A',
+    logo: `${BASE}logos/bestshirt-logo.svg`,
   },
 ]
 
@@ -60,7 +46,7 @@ export default function App() {
     <div className="app">
       <nav className="nav">
         <a href="/" className="nav-logo">
-          <img src="/logos/gpiprojekt-logo.png" alt="GPI PROJEKT" className="nav-logo-img" />
+          <img src={`${BASE}logos/gpiprojekt-logo.png`} alt="GPI PROJEKT" className="nav-logo-img" />
         </a>
         <div className="nav-links">
           <a href="tel:+48536899899">+48 536 899 899</a>
@@ -69,27 +55,43 @@ export default function App() {
       </nav>
 
       <section className="hero">
-        <div className="hero-atmosphere" />
-        <WaterLines />
+        <div className="hero-bg" aria-hidden="true" />
+        <div className="hero-accent-block" aria-hidden="true" />
+
         <div className="hero-content">
           <p className="hero-eyebrow">GPI PROJEKT P.S.A. · Warszawa</p>
           <h1 className="hero-title">
-            <span className="title-solid">NASZE</span>
-            <span className="title-outline">PORTFOLIO</span>
+            Nasze<br /><em>Portfolio</em>
           </h1>
           <p className="hero-sub">
-            Projekty zakorzenione w Warszawie — rzeka, miasto, ludzie.
+            Spółka zarządzająca portfelem projektów z branży sportowej,
+            transportowej i odzieżowej w Warszawie.
           </p>
+          <div className="hero-meta">
+            <div className="meta-item">
+              <span className="meta-val">4</span>
+              <span className="meta-label">Projekty</span>
+            </div>
+            <div className="meta-item">
+              <span className="meta-val">2022</span>
+              <span className="meta-label">Rok założenia</span>
+            </div>
+            <div className="meta-item">
+              <span className="meta-val">W-wa</span>
+              <span className="meta-label">Siedziba</span>
+            </div>
+          </div>
         </div>
-        <div className="hero-cta">
-          <span>odkryj projekty</span>
-          <div className="cta-line" />
+
+        <div className="hero-scroll">
+          <span className="scroll-label">Projekty</span>
+          <div className="scroll-line" />
         </div>
       </section>
 
       <section className="projects-section">
         <div className="section-header">
-          <span className="eyebrow">Projekty spółki</span>
+          <span className="eyebrow">Portfolio spółki</span>
           <div className="header-rule" />
         </div>
 
@@ -100,19 +102,15 @@ export default function App() {
               href={`https://${p.domain}`}
               target="_blank"
               rel="noopener noreferrer"
-              className={`card${p.light ? ' card--light' : ''}${p.colored ? ' card--colored' : ''}`}
-              style={
-                {
-                  '--c': p.color,
-                  '--cdim': p.colorDim,
-                  animationDelay: `${i * 0.12}s`,
-                } as React.CSSProperties
-              }
+              className="card"
+              style={{ '--c': p.color, animationDelay: `${i * 0.1}s` } as React.CSSProperties}
             >
-              <div className="card-glow" />
+              <div className="card-accent-bar" />
+              <p className="card-num">{p.id}</p>
               <div className="card-logo">
                 <img src={p.logo} alt={p.name} className="card-logo-img" />
               </div>
+              <p className="card-tagline">{p.tagline}</p>
               <p className="card-desc">{p.description}</p>
               <div className="card-foot">
                 <span className="card-domain">{p.domain}</span>
@@ -130,16 +128,18 @@ export default function App() {
         </div>
         <div className="about-grid">
           <p className="about-statement">
-            Spółka łącząca odważne projekty ze spoiwem Wisły. Od sportu po
-            transport, od rekreacji po modę — tworzymy w Warszawie.
+            <strong>Dane rejestrowe</strong>
+            Łączymy odważne projekty pod jednym holdingiem. Sport, transport,
+            rekreacja i moda — każdy projekt to osobna marka z własną tożsamością.
           </p>
           <div className="about-data">
             {[
-              ['NIP', '9522229976'],
-              ['KRS', '0000975759'],
-              ['Siedziba', 'ul. Cyklamenowa 7, 05-077 Warszawa'],
+              ['NIP',     '9522229976'],
+              ['KRS',     '0000975759'],
+              ['Forma',   'P.S.A.'],
+              ['Siedziba','ul. Cyklamenowa 7, 05-077 Warszawa'],
               ['Telefon', '+48 536 899 899'],
-              ['Email', 'kontakt@gpiprojekt.pl'],
+              ['Email',   'kontakt@gpiprojekt.pl'],
             ].map(([label, val]) => (
               <div className="data-row" key={label}>
                 <span className="data-label">{label}</span>
@@ -153,40 +153,15 @@ export default function App() {
       <footer className="footer">
         <div className="footer-inner">
           <a href="/" className="footer-logo">
-            <img src="/logos/gpiprojekt-logo.png" alt="GPI PROJEKT" className="footer-logo-img" />
+            <img src={`${BASE}logos/gpiprojekt-logo.png`} alt="GPI PROJEKT" className="footer-logo-img" />
           </a>
           <div className="footer-contacts">
             <a href="tel:+48536899899">+48 536 899 899</a>
             <a href="mailto:kontakt@gpiprojekt.pl">kontakt@gpiprojekt.pl</a>
           </div>
         </div>
-        <p className="footer-copy">
-          © 2025 GPI PROJEKT P.S.A. · Wszelkie prawa zastrzeżone.
-        </p>
+        <p className="footer-copy">© 2025 GPI PROJEKT P.S.A. · Wszelkie prawa zastrzeżone.</p>
       </footer>
     </div>
-  )
-}
-
-function WaterLines() {
-  return (
-    <svg
-      className="water-svg"
-      viewBox="0 0 1440 400"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-    >
-      {[0, 1, 2, 3, 4].map((i) => (
-        <path
-          key={i}
-          className="wl"
-          style={{ animationDelay: `${i * 1.4}s` } as React.CSSProperties}
-          d={`M0,${200 + i * 30}
-            C240,${185 + i * 30} 480,${220 + i * 30} 720,${200 + i * 30}
-            C960,${180 + i * 30} 1200,${215 + i * 30} 1440,${200 + i * 30}
-            L1440,400 L0,400 Z`}
-        />
-      ))}
-    </svg>
   )
 }
