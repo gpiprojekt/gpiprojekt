@@ -154,7 +154,9 @@ export default function App() {
           </div>
 
           <div className="project-center">
-            <img src={p.logo} alt={p.name} className="project-logo" />
+            <a href={`https://${p.domain}`} target="_blank" rel="noopener noreferrer" className="project-logo-link">
+              <img src={p.logo} alt={p.name} className="project-logo" />
+            </a>
           </div>
 
           <div className="project-bottom">
