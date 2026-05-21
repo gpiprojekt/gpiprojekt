@@ -127,13 +127,19 @@ export default function App() {
     <div className="snap-container" ref={containerRef}>
       <NavDots total={total} current={current} />
 
+      <div className={`scroll-hint${current === total - 1 ? ' scroll-hint--hidden' : ''}`} aria-hidden="true">
+        <div className="scroll-hint-mouse">
+          <div className="scroll-hint-wheel" />
+        </div>
+        <span className="scroll-hint-text">przewiń</span>
+      </div>
+
       {/* SCREEN 0 — INTRO */}
       <section className="snap-screen screen-intro" data-idx="0">
         <div className="intro-content">
           <img src={`${BASE}logos/gpiprojekt-logo.png`} alt="GPI PROJEKT" className="intro-logo" />
           <p className="intro-tagline">Portfolio spółki</p>
           <p className="intro-sub">Przewiń, żeby poznać nasze projekty</p>
-          <div className="intro-arrow">↓</div>
         </div>
         <div className="intro-bg-grid" aria-hidden="true" />
       </section>
