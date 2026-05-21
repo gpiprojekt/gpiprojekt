@@ -173,23 +173,36 @@ export default function App() {
         <div className="contact-content">
           <img src={`${BASE}logos/gpiprojekt-logo.png`} alt="GPI PROJEKT" className="contact-logo" />
 
-          <div className="contact-links">
-            <a href="tel:+48536899899" className="contact-link">
-              <span className="contact-link-icon">✆</span>
-              +48 536 899 899
+          <div className="contact-channels">
+            <a href="tel:+48536899899" className="contact-channel">
+              <span className="contact-channel-icon">✆</span>
+              <span className="contact-channel-body">
+                <span className="contact-channel-label">Telefon</span>
+                <span className="contact-channel-val">+48 536 899 899</span>
+              </span>
             </a>
-            <a href="mailto:kontakt@gpiprojekt.pl" className="contact-link">
-              <span className="contact-link-icon">✉</span>
-              kontakt@gpiprojekt.pl
+            <a href="mailto:biuro@gpiprojekt.pl" className="contact-channel">
+              <span className="contact-channel-icon">✉</span>
+              <span className="contact-channel-body">
+                <span className="contact-channel-label">E-mail ogólny</span>
+                <span className="contact-channel-val">biuro@gpiprojekt.pl</span>
+              </span>
+            </a>
+            <a href="mailto:faktury@gpiprojekt.pl" className="contact-channel">
+              <span className="contact-channel-icon">🧾</span>
+              <span className="contact-channel-body">
+                <span className="contact-channel-label">Faktury</span>
+                <span className="contact-channel-val">faktury@gpiprojekt.pl</span>
+              </span>
             </a>
           </div>
 
           <div className="contact-data">
             {[
-              ['NIP',     '9522229976'],
-              ['KRS',     '0000975759'],
-              ['Forma',   'Prosta Spółka Akcyjna'],
-              ['Siedziba','ul. Cyklamenowa 7\n05-077 Warszawa'],
+              ['NIP',      '9522229976'],
+              ['KRS',      '0000975759'],
+              ['Forma',    'Prosta Spółka Akcyjna'],
+              ['Siedziba', 'ul. Cyklamenowa 7\n05-077 Warszawa'],
             ].map(([label, val]) => (
               <div className="contact-row" key={label}>
                 <span className="contact-label">{label}</span>

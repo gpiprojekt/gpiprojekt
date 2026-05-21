@@ -9,7 +9,8 @@ Strona firmowa spółki GPI PROJEKT P.S.A.
 - **KRS:** 0000975759
 - **Adres:** ul. Cyklamenowa 7, 05-077 Warszawa
 - **Telefon:** +48 536 899 899
-- **Email:** kontakt@gpiprojekt.pl
+- **Email ogólny:** biuro@gpiprojekt.pl
+- **Email faktury:** faktury@gpiprojekt.pl
 - **Właściciel:** Grzegorz Pilich
 
 ## Stack technologiczny
